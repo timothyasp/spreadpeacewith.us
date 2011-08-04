@@ -1,0 +1,28 @@
+#main
+  #whoSection
+    %h2 Who We Are
+    %img(src="/media/socratesplatobeerbong.jpg" alt="Socrates and Plato Beerbonging")
+    <p>We here at Beerbongs for World Peace have a simple goal: to solve all the world's problems and bring peace to every human on the planet. That is why the kind hearts and hands at BBFWP are striving to change the world.</p>
+    <p>A non-profit, online sales company, BBFWP has set out to make a real and lasting difference in the world. Based on a simple premise, "we're thirsty, they're hungry" BBFWP is committed to saving the world, one beerbong at a time.</p>
+    <p>That is why all the profit made through our sales is donated to the World Food Program, an organization that feeds children in need throughout the world. In fact, the profit made from each beerbong sale is used to feed four hungry children a school meal.</p>  
+  #whatSection
+    %h2 What We Do
+    %img(src="/media/adamandeve.gif" alt="Adam and Eve Beerbonging for the creation of the world")
+    <p>We here at Beerbongs for World Peace have a simple goal: to solve all the world's problems and bring peace to every human on the planet. That is why the kind hearts and hands at BBFWP are striving to change the world.</p>
+    <p>A non-profit, online sales company, BBFWP has set out to make a real and lasting difference in the world. Based on a simple premise, "we're thirsty, they're hungry" BBFWP is committed to saving the world, one beerbong at a time.</p>
+    <p>That is why all the profit made through our sales is donated to the World Food Program, an organization that feeds children in need throughout the world. In fact, the profit made from each beerbong sale is used to feed four hungry children a school meal.</p>  
+#sidebar
+  #counter
+    %p Hungry Children Fed
+    %h2= @counter
+  #leaderboard
+    %h2 Leaderboard
+    %ul
+      - @profiles.each do |profile| 
+        %li 
+          %img(src="#{profile.profileImgPath}")
+          .sideTextWrap
+            %h3= profile.name
+            %p <strong>#{profile.beerbong.childrenFed}</strong> Children Fed
+            <p><a href="#">view profile</a></p>
+      / DON'T REMOVE THIS FUCKING COMMENT

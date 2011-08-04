@@ -1,0 +1,306 @@
+.brown
+{
+	color: #3B3329;
+}
+.blue
+{
+	color: #96DAC1;
+}
+.red
+{
+	color: #E06441;
+}
+/*END COLOR CLASS DEFS
+MARKUP STYLE*/
+*, HTML
+{
+	margin: 0;
+	padding: 0;
+}
+HTML, BODY
+{
+	height: 100%;
+}
+BODY
+{
+	background-color: #FFF;
+	font-family: "Droid Sans", Arial, serif;
+	color: #3B3329;
+/*BROWN*/
+}
+/*All headings use Pacifico. Imported in main
+* layout file from GoogleWebfonts
+ */
+H1, H2, H3, H4, H5, H6
+{
+	font-family: Pacifico, arial, serif;
+	color: #3B3329;
+}
+/*Everything else uses
+ */
+P, A
+{
+	font-family: "Droid Sans", Arial, serif;
+	color: #3B3329;
+/*BROWN*/
+}
+A:link, A:visited
+{
+	text-decoration: none;
+	color: #3B3329;
+}
+A:hover, A:active
+{
+	text-decoration: underline;
+	color: #3B3329;
+}
+/*END MARKUP STYLE
+HELPERS*/
+.clear
+{
+	clear: left;
+}
+/*END HELPERS
+MAIN STYLE
+STRUCTURE*/
+#wrapper
+{
+	min-height: 100%;
+	background-image: url('/public/img/patt.png');
+}
+#container
+{
+	width: 740px;
+	margin: 0 auto;
+	margin-top: 5px;
+	overflow: auto;
+	padding-bottom: 90px;
+}
+#main
+{
+	float: left;
+	margin-left: 70px;
+	width: 460px;
+	max-width: 460px;
+	overflow: hidden;
+}
+#sidebar
+{
+	float: right;
+	width: 200px;
+	max-width: 200px;
+}
+#footer
+{
+	position: relative;
+	height: 37px;
+	margin-top: -37px;
+	clear: both;
+}
+/*END STRUCTURE
+HEADER*/
+#header
+{
+	height: 90px;
+}
+#header H1
+{
+	font-family: Pacifico, arial, serif;
+	font-size: 36px;
+	color: #FFF;
+	margin-left: 75px;
+	margin-top: -55px;
+}
+.header_wrapper
+{
+	position: absolute;
+/*Negative margin center trick: http://bluerobot.com/web/css/center2.html*/
+	left: 50%;
+	width: 740px;
+	margin-left: -370px;
+}
+#header .top
+{
+	background-color: #96DAC1;
+	height: 60px;
+	width: 100%;
+}
+#header .bottom
+{
+	background-color: #E06441;
+	height: 25px;
+	margin-top: 5px;
+	width: 100%;
+	color: #FFF;
+	font-size: 20px;
+	font-family: Pacifico, arial, serif;
+}
+#logo
+{
+	background: url(./img/logo.png) no-repeat;
+	width: 65px;
+/*height of image (56px) + padding*/
+	height: 60px;
+/*height of the header.top, spreads the border to the bottom.*/
+	border-right: 5px solid #FFF;
+}
+#logo A
+{
+	margin: 0;
+	width: 56px;
+	height: 56px;
+	text-indent: -9999px;
+	display: block;
+}
+#header .links
+{
+	margin-left: 65px;
+}
+#header .links LI
+{
+	height: 25px;
+	display: block;
+	list-style: none;
+	float: left;
+	border-left: 5px solid #FFF;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	margin: 0 10px 0 0;
+}
+#header .links A
+{
+	color: #FFF;
+	font-size: 12px;
+	font-family: Pacifico, arial, serif;
+}
+/*MAIN*/
+#main IMG
+{
+	border: 2px solid #3B3329;
+	padding: 1px;
+}
+#main .profile
+{
+	border-bottom: 1px dotted #3B3329;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	min-height: 230px;
+}
+#main .profile IMG
+{
+	float: right;
+	margin-left: 8px;
+}
+#main .profile .infoWrap
+{
+	width: 310px;
+}
+#main .profile .infoWrap H2
+{
+	font-size: 30px;
+	padding-top: 8px;
+	margin-bottom: 12px;
+}
+#main .profile .infoWrap P
+{
+	font-size: 11px;
+	line-height: 1.4em;
+	margin-bottom: 8px;
+}
+#whoSection
+{
+}
+/*[clearfix]*/
+#whoSection:after
+{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+
+#whoSection IMG
+{
+	width: 200px;
+	float: right;
+}
+#whatSection
+{
+}
+#whatSection IMG
+{
+	width: 200px;
+}
+/*END MAIN
+SIDEBAR*/
+#counter
+{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#counter H2
+{
+	font-family: "Droid Serif", arial, serif;
+	font-size: 38px;
+	font-weight: bold;
+}
+#counter P
+{
+	font-family: Pacifico, arial, serif;
+	font-size: 21px;
+	margin-top: 4px;
+	padding-bottom: 12px;
+	border-bottom: 1px dotted #3B3329;
+	margin-bottom: 4px;
+}
+#leaderboard H2
+{
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+	border-bottom: 1px dotted #3B3329;
+}
+#leaderboard UL LI
+{
+	height: 50px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+#leaderboard UL LI .sideTextWrap
+{
+	width: 135px;
+	float: right;
+}
+#leaderboard UL LI .sideTextWrap H3
+{
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+#leaderboard UL LI .sideTextWrap P
+{
+	font-size: 11px;
+	margin-bottom: 4px;
+}
+#leaderboard UL LI .sideTextWrap P:last-of-type
+{
+	font-style: italic;
+	font-size: 10px;
+}
+/*END SIDEBAR
+FOOTER*/
+#footer .top
+{
+	background-color: #E06441;
+	height: 5px;
+	margin-bottom: 2px;
+}
+#footer .bottom
+{
+	background-color: #96DAC1;
+	height: 30px;
+	width: 100%;
+}
+/*END FOOTER*/
