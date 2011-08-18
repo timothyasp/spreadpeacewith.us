@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset='utf-8' />
+      <title><%= SITE_TITLE %></title>
+      <link rel='stylesheet' href='/style.css' type='text/css' media='screen' title='default style sheet'>
+      <link rel='stylesheet' href='/reset.css' type='text/css' media='screen' title='default style sheet'>
+      <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+   </head>
+   <body>
+      <div id="wrapper">
+         <header>
+            <div class="topBar">
+               <div id="logo">
+                  <a href="http://beerbongsforworldpeace.com" title="Beerbongs for World Peace">Beerbongs For World Peace</a>    
+               </div>
+               <h1><%= SITE_HEADER %></h1>
+            </div>
+            <div class="navBar">
+               <ul class="links">
+                  <li> 
+                    <a href="/" alt="About Spread Peace With Us">About</a>
+                  </li>
+                  <li>
+                    <a href="/team" alt="The Spread Peace With Us Team">Team</a>
+                  </li>
+                  <li>
+                    <a href="/join" alt="Join the Spread Peace With Us Team">Join</a>                 
+                  </li>
+                  <li>
+                     <a href="#" alt="Buy a Beerbong from Beerbongs For World Peace">Buy</a>     
+                  </li>
+               </ul>
+            </div>
+         </header>
+         <div id="container">
+            <%= yield %>
+            <div id="sidebar">
+               <div id="counter">
+                  <h2>Hungry Children Fed</h2>
+                  <span class="counterNum"><% @counter %></span>
+               </div>
+               <div id="leaderboard">
+                  <h2>Leaderboard</h2>
+                  <div id="profileList">
+                  <% @profiles.each do |profile| %> 
+                     <div class="profileRow">  
+                        <div class="profileImg">
+                           <img src="<% profile.profileImgPath %>" alt="Profile Picture" />
+                        </div>
+                        <div class="profileInfo">
+                           <h3><% profile.name %></h3>
+                           <p><strong><% profile.beerbong.childrenFed %></strong> Children Fed</p>
+                        </div>   
+                        <p><a href="#">view profile</a></p>
+                     </div>
+                  <% end %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>
+      </footer>
+   </body>
+</html>

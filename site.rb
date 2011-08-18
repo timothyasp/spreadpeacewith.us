@@ -61,14 +61,14 @@ get '/' do
   @counter = Beerbong.all.sum(:childrenFed)
   @profiles = Person.all(:order => :id.asc)
 
-  haml :index
+  erb :index
 end
 
 get '/team' do
   @counter = Beerbong.all.sum(:childrenFed)
   @profiles = Person.all.sort_by { |person| -person.beerbong.sales }
   
-  haml :team
+  erb :team
 end
 
 get '/beerbongs' do
@@ -76,11 +76,11 @@ get '/beerbongs' do
 end
 
 get '/admin' do
-  haml :admin
+  erb :admin
 end
 
 get '/admin/add' do
-  haml :add
+  erb :add
 end
 
 post '/admin/add' do
@@ -88,18 +88,18 @@ post '/admin/add' do
   p.beerbong = Beerbong.new(:sales => params[:beerbongs], :childrenFed => params[:beerbongs].to_i*4)
   p.save
     
-  redirect '/'
+  erb '/'
 end
 
 get '/admin/edit' do
   @profiles = Person.all :order => :id.asc
-  haml :edit
+  erb :edit
 end
 
 get '/admin/editItem/:id' do
   @profile = Person.get params[:id]
   
-  haml :editItem
+  erb :editItem
 end
 
 put '/admin/editItem/:id' do
@@ -109,7 +109,7 @@ put '/admin/editItem/:id' do
   p.description = params[:description]
   p.save
   
-  redirect '/admin/edit'
+  erb '/admin/edit'
 end
 
 get '/admin/editPage/about' do
