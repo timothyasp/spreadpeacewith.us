@@ -3,7 +3,7 @@
    <head>
       <meta charset='utf-8' />
       <title><%= SITE_TITLE %></title>
-      <link rel='stylesheet' href='/style.css' type='text/css' media='screen' title='default style sheet'>
+      <link rel='stylesheet' href='/admin.css' type='text/css' media='screen' title='default style sheet'>
       <link rel='stylesheet' href='/reset.css' type='text/css' media='screen' title='default style sheet'>
       <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
@@ -43,32 +43,8 @@
 				<div id="main">
 					<%= yield %>
 				</div>
-            <div id="sidebar">
-               <div id="counter">
-                 <h2>Hungry Children Fed</h2>
-                 <span class="counterNum"><%= @counter %></span>
-              </div>
-              <div id="leaderboard">
-                 <h2>Leaderboard</h2>
-                 <div id="profileList">
-                 <% @profiles.each do |profile| %> 
-                    <div class="profileRow">  
-                       <div class="profileImg">
-                          <img src="<%= profile.profileImgPath %>" alt="Profile Picture" />
-                       </div>
-                       <div class="profileInfo">
-                          <h3><% profile.name %></h3>
-                          <p><strong><% profile.beerbong.childrenFed %></strong> Children Fed</p>
-                       </div>   
-                       <p><a href="#">view profile</a></p>
-                    </div>
-                 <% end %>
-                 </div>
-              </div>
-            </div>
             <div class="group"></div>
          </div>
-      	<div class="group"></div>
       </div>
       <div id="footer">
         <div class="top"></div>

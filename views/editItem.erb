@@ -1,0 +1,36 @@
+<form action="/admin/editItem/#{@profile.id}" method="post" id="edit">
+	<input type="hidden" name="_method" value="put">  
+    %label Name
+    %input(type = "text" name = "name" value="#{@profile.name}")
+    %label Email
+    %input(type = "text" name = "email" value="#{@profile.email}") 
+    %label Write a description!
+    %textarea(name = "description")
+      = @profile.description
+    %label Profile Image
+    %img(src = "#{@profile.profileImgPath}")
+    %input(type = "file" name = "profileImage") 
+  %input(type = "submit" value = "Submit")
+/ LEAVE THIS LINE HERE IF YOU DELETE THIS COMMENT IT WILL BREAK EVERYTHING
+	<div class="inputWrap">
+		<label for="name">Name</label>
+		<input type="text" name="name" class="nameInput" value="<%= @profile.name %>" />
+	</div>
+	<div class="inputWrap">
+		<label for="email">Email</label>
+		<input type="text" name="email" class="emailInput"  value="<%= @profile.email %>"/>
+	</div>
+	<div class="inputWrap">
+		<p for="description">Write Profile Description</p>
+		<textarea rows="4" cols="10" name="description" class="descriptionTextarea"><%= @profile.description %></textarea>
+	</div>
+	<div class="inputWrap">
+		<label for="beerbongs">Enter # of Beerbongs Sold</label>
+		<input type="text" name="beerbongs" class="beerbongsInput" value="<%= @profile.beerbongs %> />
+	</div>
+	<div class="inputWrap">
+		<label for="profileImage">Add New Profile Image</label>
+		<input type="file" name="profileImage" class="profileImageInput" />
+	</div>
+	<button type="submit" class="submitButton" id="profileSubmit">Submit Edited Profile</button>
+	<div class="group"></div>

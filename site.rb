@@ -36,7 +36,7 @@ class Person
   
   def self.upload(file, name)
     File.open('uploads/' + file, "w") do |f|
-      f.write(file.read)
+      f.write('uploads/' + file.read)
       f.path
     end
   end
@@ -57,8 +57,13 @@ DataMapper.finalize.auto_upgrade!
 SITE_TITLE = "Spread Peace With Us -- A BBFWP Movement"
 SITE_HEADER = "Spread Peace With Us"
 
+before do 
+  @counter = 200 #Beerbong.all.sum(:childrenFed)
+  @profiles = Person.all(:order => :id.asc)
+end  
+
 get '/' do  
-  @counter = Beerbong.all.sum(:childrenFed)
+  @counter = 200 #Beerbong.all.sum(:childrenFed)
   @profiles = Person.all(:order => :id.asc)
 
   erb :index
@@ -76,15 +81,25 @@ get '/beerbongs' do
 end
 
 get '/admin' do
+
   erb :admin
 end
 
 get '/admin/add' do
+
   erb :add
 end
 
 post '/admin/add' do
-  p = Person.create(:name => params[:name], :email => params[:email], :description => params[:description], :profileImgPath => Person.upload(params[:profileImage], 'profileImage')) 
+  
+
+
+  File.open('uploads/' + params['profileImage'][:filename], "w") do |f|
+	 f.write(params['profileImage'][:tempfile].read)
+
+  end
+
+  p = Person.create(:name => params[:name], :email => params[:email], :description => params[:description], :profileImgPath => f.path) 
   p.beerbong = Beerbong.new(:sales => params[:beerbongs], :childrenFed => params[:beerbongs].to_i*4)
   p.save
     
