@@ -39,8 +39,9 @@ h1 {
    font-size: 36px;
 	 color: #3B3329;
 }
-h2 {
-   font-size: 28px;
+h2, #main h2, #sidebar h2 {
+   font-size: 32px;
+	font-weight: bold;
 	color: #3B3329;
 }
 
@@ -111,7 +112,7 @@ a:hover, a:active {
 #main {
    float: left;
 	width: 600px;
-   padding: 16px 6px;
+   padding: 8px 6px 16px 6px;
 }
 
 #sidebar {
@@ -135,11 +136,12 @@ a:hover, a:active {
 }
 
 #header h1 {
-   font-family: Pacifico, arial, serif;
+   font-family: 'Pacifico', arial, serif;
  	font-size: 36px;
-	color: #FFF;
+	color: #fff;
 	margin-left: 75px;
-	margin-top: -55px;
+	display: inline;
+	padding-top: 10px;
 }
 
 #header .headerWrapper {
@@ -156,9 +158,9 @@ a:hover, a:active {
    border-bottom: 1px solid #82d6b6;
 }
 
-
 #header .topBar .headerWrapper h1 {
    margin-left: 6px;
+	padding-top: 10px;
 }
     
 #header .navBar {
@@ -177,12 +179,14 @@ a:hover, a:active {
 
 #header .topBar .headerWrapper #logo {
    margin-left: -64px;
+	margin-top: 2px;
 }
 
 #logo {
    background: url(img/logo.png) no-repeat;
    width: 65px;
 	height: 60px; /*height of image (56px) + padding*/
+	float: left;
 }
 
 #logo a {
@@ -216,6 +220,7 @@ a:hover, a:active {
    color: #FFF;
    font-size: 13px;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	text-shadow: 0 -1px 0 #933b23;
 }
 
 #header .links li a:hover {
@@ -230,8 +235,6 @@ a:hover, a:active {
 }
 
 .section h2, #main h2 {
-   font-size: 32px;
-   font-weight: bold;
    margin-bottom: 16px;
 }
 
@@ -251,7 +254,7 @@ a:hover, a:active {
 }
 
 .profile {
-	border-bottom: 1px dotted #3B3329;
+	border-bottom: 1px solid #3B3329;
 	margin-bottom: 8px;
 	padding-bottom: 8px;
 	min-height: 230px;
@@ -267,7 +270,6 @@ a:hover, a:active {
 }
 
 .profile .infoWrap h2 {
-	font-size: 30px;
 	padding-top: 8px;
    margin-bottom: 12px;
 }
@@ -278,20 +280,15 @@ a:hover, a:active {
    margin-bottom: 8px;
 }
 
-/*END MAIN SIDEBAR*/
+/* SIDEBAR */
 
 #counter, #leaderboard {
    text-align: center;
-   margin-bottom: 20px;
-}
-
-#sidebar h2 {
-	font-size: 38px;
-	font-weight: bold;
+   margin-bottom: 36px;
 }
 
 #counter .counterNum {
-   font-size: 96px;
+   font-size: 76px;
  	margin-top: 16px;
 	padding-bottom: 12px;
    margin-bottom: 4px;
@@ -299,6 +296,56 @@ a:hover, a:active {
 	font-family: Georgia, serif;
 }
 
+#sidebarProfileList {
+	text-align: left;
+}
+
+#leaderboard h2 {
+	border-bottom: 1px solid #3b3329;
+	padding-bottom: 8px;
+}
+
+.profileRow {
+	border-bottom: 1px solid #3b3329; 
+	padding: 8px 0;
+	height: 77px;
+	overflow: hidden;
+}
+
+.profileImg img {
+	width: 73px;
+	height: 73px;
+	float: left;
+	border: 1px solid #3b3329;
+	margin-right: 8px;
+}
+
+.profileInfo {
+	float: right;
+	width: 186px;
+}
+
+.profileInfo h3 {
+	font-size: 21px;
+	margin-bottom: 2px;
+}
+
+.profileInfo p.childrenFed {
+	font-size: 14px;
+}
+
+.profileInfo p.childrenFed strong {
+	font-weight: bold;
+}
+
+.profileInfo p {
+	font-size: 11px;
+	overflow: hidden;
+}
+
+.profileInfo p.profileLink {
+	margin-left: 60px;
+}
 
 /*END SIDEBAR FOOTER*/
 
@@ -335,12 +382,18 @@ a:hover, a:active {
 .inputWrap input {
 	padding: 4px 2px;
 	width: 250px;
+	border: 1px solid #3B3329;
 }
 
 .inputWrap textarea {
 	width: 450px;
 	height: 200px;
 	padding: 4px;
+	border: 1px solid #3B3329;
+}
+
+p.textLabel {
+	color: #3B3329;
 }
 
 .formBody p {
@@ -359,6 +412,7 @@ a:hover, a:active {
 }	
 
 .submitButton {
+	cursor: pointer; 
 	-moz-box-shadow:inset 0px 1px 0px 0px #fab3ad;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fab3ad;
 	box-shadow:inset 0px 1px 0px 0px #fab3ad;
@@ -392,4 +446,23 @@ a:hover, a:active {
 	position:relative;
 	top:1px;
 	text-shadow: 0;
+}
+
+
+/* FOOTER */
+
+#footer .bottom p {
+	text-align: center;
+	color: #fff;
+	font-size: 11px;
+	padding-top: 5px;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+}
+
+#footer .bottom p a {
+	color: #fff;
+}
+
+.beerbongInput {
+	width: 150px;
 }

@@ -1,0 +1,13 @@
+<h2>Edit Beerbong Sales</h2>
+<p>So this is where you can batch update the beerbongs sales #'s.  <b>NOTE: these are # of beerbongs sold, NOT number of children fed.  Children fed is calculatd from # of sales</b></p>
+<form action="/admin/sales" method="post" id="edit">
+	<input type="hidden" name="_method" value="put">  
+	<% @profiles.each do |profile| %>
+	<div class="inputWrap">
+		<label for="beerbongs"><%= profile.name %></label>
+		<input type="text" name="beerbongs<%= profile.id %>" id="<%= profile.id %>" class="beerbongInput" value="<%= profile.beerbong.sales %>" />
+	</div>
+	<% end %>
+	<button type="submit" class="submitButton" id="profileSubmit">Save Beerbong Totals</button>
+	<div class="group"></div>
+</form>

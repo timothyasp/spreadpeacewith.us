@@ -4,20 +4,20 @@
 	<h2>Edit Profile</h2>
 	<p class="formDescription">Click on the "edit" link to edit that users profile.</p>
 </div>
-<div class="profilesWrap">
+
+<div id="mainProfileList" class="profilesWrap">
 	<% if @profiles.count > 0 %>
 		<% @profiles.each do |profile| %> 
-			<div class="profile">
-				<img src="<% @profile.profileImgPath %>" alt="<% @profile.name %>'s Profile Picture thumbnail" class="profileImgThumb" />
-				<div class="infoWrap">
-					<h2 class="profileName"><% @profile.name %></h2>
-					<p class="profileDescription"><% @profile.description %></p>
-					<br />
-				</div>
-				<a href="/admin/editItem/<% @profile.id %>">Edit Profile</a>
+		<div class="profile">
+			<img src="<%= profile.profileImgPath %>" alt="<%= profile.name %>'s Profile Picture thumbnail" class="profileImgThumb" />
+			<div class="infoWrap">
+				<h2 class="profileName"><%= profile.name %></h2>
+				<p class="profileDescription"><%= profile.description %></p>
 			</div>
+			<a href="/admin/editItem/<%= profile.id %>">Edit Profile</a>
+		</div>
 		<% end %>
 	<% else %>
-		<p style="margin-top: 16px;">No Profiles to Display - Add some <a href="/admin/add">here</a></p>
+		<p>No Profiles to Display - Contact us for info on how to join our team!!</p>
 	<% end %>
 </div>

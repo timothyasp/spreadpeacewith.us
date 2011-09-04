@@ -33,7 +33,7 @@
                         <a href="/join" alt="Join the Spread Peace With Us Team">Join</a>                 
                      </li>
                      <li>
-                        <a href="#" alt="Buy a Beerbong from Beerbongs For World Peace">Buy</a>     
+                        <a href="http://beerbongsforworldpeace.org/shop" alt="Buy a Beerbong from Beerbongs For World Peace">Buy</a>     
                      </li>
                   </ul>
                </div>
@@ -50,17 +50,18 @@
               </div>
               <div id="leaderboard">
                  <h2>Leaderboard</h2>
-                 <div id="profileList">
-                 <% @profiles.each do |profile| %> 
+                 <div id="sidebarProfileList">
+                 <% @sidebarProfiles.each do |profile| %> 
                     <div class="profileRow">  
                        <div class="profileImg">
-                          <img src="<%= profile.profileImgPath %>" alt="Profile Picture" />
+								  <a href="/team/<%= profile.id %>"><img src="<%= profile.profileImgPath %>" alt="Profile Picture" /></a>
                        </div>
                        <div class="profileInfo">
-                          <h3><% profile.name %></h3>
-                          <p><strong><% profile.beerbong.childrenFed %></strong> Children Fed</p>
+								  <h3><a href="/team/<%= profile.id %>"><%= profile.name %></a></h3>
+                          <p class="childrenFed"><strong><%= profile.beerbong.childrenFed %></strong> Children Fed</p>
+								  <p class="profileDescription"><%= profile.description %></p>
                        </div>   
-                       <p><a href="#">view profile</a></p>
+							  <div class="group"></div>
                     </div>
                  <% end %>
                  </div>
@@ -72,7 +73,9 @@
       </div>
       <div id="footer">
         <div class="top"></div>
-        <div class="bottom"></div>
+        <div class="bottom">
+		     <p>&copy; Beerbongs For World Peace 2011 - Coded and Designed by <a href="http://www.timasp.com">Tim</a></p>
+		  </div>
       </div>
    </body>
 </html>

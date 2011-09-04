@@ -4,7 +4,7 @@
 	<h2>Add Profile</h2>
 	<p class="formDescription">This is where you add a new profile for a Beerbongs For World Peace team member.  <br />When you click submit, this WILL be put on the live website, so don't put something fucking stupid or incomplete or I'll send carebears on bad acid with pitchforks after you.<br />--  Tim <3<3</p>
 </div>
-<form action="/admin/add" method="post" enctype='multipart/form-data' id="addProfile" class="formBody">
+<form action="/admin/add" method="post" id="addProfile" class="formBody">
 	<div class="inputWrap">
 		<label for="name">Name</label>
 		<input type="text" name="name" class="nameInput" />
@@ -23,7 +23,9 @@
 	</div>
 	<div class="inputWrap">
 		<label for="profileImage">Add Your Profile Image</label>
-		<input type="file" name="profileImage" class="profileImageInput" />
+		<p style="font-size: 10px;">Upload the file to the main beerbongs page or find an image path from somewhere else, and paste it into this field. TODO for later is getting a full image upload and storage locally.  No time right now.</p>
+		<%#<input type="file" name="profileImage" class="profileImageInput" /> %>
+		<input type="text" name="profileImage" class="profileImageInput" />
 	</div>
 	<button type="submit" class="submitButton" id="profileSubmit">Add Profile to Team</button>
 	<div class="group"></div>
